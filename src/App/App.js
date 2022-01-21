@@ -20,9 +20,9 @@ class App extends React.Component {
   };
 
   countTotalFeedback = () => {
-    return Object.values(this.state).reduce(
-      (firstVal, secondVal) => firstVal + secondVal
-    );
+    return Object.values(this.state).reduce((firstVal, secondVal) => {
+      return firstVal + secondVal;
+    }, 0);
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -35,11 +35,11 @@ class App extends React.Component {
     const options = Object.keys(this.state);
     return (
       <Wrapper>
-        <Section tile="Please leave feedback">
+        <Section title="Please leave feedback">
           <FeedbackOptions options={options} clickGood={this.btnClick} />
         </Section>
         {total > 0 ? (
-          <Section tile="Statistics">
+          <Section title="Statistics">
             <Statistics
               good={good}
               neutral={neutral}

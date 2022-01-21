@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { Btn, FeedbackList, FeedbacItem } from "./FeedbackOptions.styled";
 
 export default function FeedbackOptions({ options, clickGood }) {
@@ -13,3 +15,8 @@ export default function FeedbackOptions({ options, clickGood }) {
     </FeedbackList>
   );
 }
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.array.isRequired,
+  clickGood: PropTypes.func.isRequired,
+};
